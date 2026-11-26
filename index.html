@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8ff">
+    <meta name="description" content="Find your next favorite read at Bluebird Books.">
+    <title>Bluebird Books — Find your next favorite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navigation page-width" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Bluebird Books home">
+          <span class="brand-mark" aria-hidden="true">b.</span>
+          <span>bluebird<span class="brand-light">books</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a>
+          <a href="#books">Books</a>
+          <a href="#categories">Categories</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="cart-button" href="#books" aria-label="Shopping cart, 0 items">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+          <span>Cart</span><span class="cart-count" aria-live="polite">0</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content page-width">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> A little something for every reader</p>
+            <h1>Stories worth<br>staying up <span>for.</span></h1>
+            <p class="hero-description">Find your next favorite in a handpicked collection of books made to inspire, surprise, and stay with you.</p>
+            <a class="button button-primary" href="#books">Explore the collection <span aria-hidden="true">→</span></a>
+            <div class="reader-note"><div class="reader-avatars" aria-hidden="true"><span>J</span><span>M</span><span>A</span></div><p><strong>Made for curious minds.</strong><br>Picked with readers in mind.</p></div>
+          </div>
+          <div class="hero-art" aria-label="A cozy stack of books and a cup of coffee">
+            <div class="hero-sun"></div>
+            <div class="hero-book hero-book-back">A WORLD<br>OF WONDER</div>
+            <div class="hero-book hero-book-front"><span>the art of<br>slowing down</span><small>FIND YOUR QUIET</small></div>
+            <div class="hero-sparkle sparkle-one">✳</div><div class="hero-sparkle sparkle-two">✦</div>
+            <div class="hero-caption">Your next chapter<br>starts here <span>↗</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits page-width" aria-label="Why shop with us">
+        <div><span class="benefit-icon">✦</span><span>Thoughtfully curated</span></div>
+        <div><span class="benefit-icon">♡</span><span>For every kind of reader</span></div>
+        <div><span class="benefit-icon">↗</span><span>Little joys, delivered</span></div>
+      </section>
+
+      <section class="books-section section-pad" id="books">
+        <div class="page-width">
+          <div class="section-heading">
+            <div><p class="eyebrow">The book nook</p><h2>Find your next <span>favorite.</span></h2></div>
+            <p class="section-intro">Good books, good company. Browse our collection and follow wherever your curiosity leads.</p>
+          </div>
+          <div class="book-tools">
+            <label class="search-box">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+              <span class="visually-hidden">Search books by title</span>
+              <input id="book-search" type="search" placeholder="Search by book title..." autocomplete="off">
+            </label>
+            <label class="filter-label" for="category-filter">Browse by</label>
+            <select id="category-filter" aria-label="Filter books by category">
+              <option value="all">All categories</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Science">Science</option>
+              <option value="Technology">Technology</option>
+              <option value="Biography">Biography</option>
+              <option value="Art &amp; Design">Art &amp; Design</option>
+            </select>
+          </div>
+          <div class="category-chips" id="categories" aria-label="Book categories">
+            <button class="category-chip active" type="button" data-category="all">All books</button>
+            <button class="category-chip" type="button" data-category="Fiction">Fiction</button>
+            <button class="category-chip" type="button" data-category="Science">Science</button>
+            <button class="category-chip" type="button" data-category="Technology">Technology</button>
+            <button class="category-chip" type="button" data-category="Biography">Biography</button>
+            <button class="category-chip" type="button" data-category="Art &amp; Design">Art &amp; Design <span class="new-tag">NEW</span></button>
+          </div>
+          <div class="book-grid" id="book-grid" aria-live="polite"></div>
+          <p class="no-results" id="no-results" hidden>No books found. Try a different title or category.</p>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div class="newsletter-inner page-width">
+          <div><p class="eyebrow">A note from the bookshop</p><h2>Good reads, <span>good news.</span></h2><p>Sign up for new arrivals, bookish inspiration, and the occasional happy surprise.</p></div>
+          <a class="button button-light" href="#contact">Say hello <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="contact-section section-pad" id="contact">
+        <div class="contact-layout page-width">
+          <div class="contact-copy">
+            <p class="eyebrow">We're all ears</p>
+            <h2>Have a question?<br><span>Let's talk books.</span></h2>
+            <p>Looking for a recommendation or have a question about an order? Send us a note and we'll get back to you soon.</p>
+            <a class="contact-email" href="mailto:hello@bluebirdbooks.example">hello@bluebirdbooks.example <span aria-hidden="true">↗</span></a>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <label for="contact-name">Your name<input id="contact-name" name="name" type="text" placeholder="What should we call you?" required minlength="2"></label>
+              <label for="contact-email">Email address<input id="contact-email" name="email" type="email" placeholder="you@example.com" required></label>
+            </div>
+            <label for="contact-message">Your message<textarea id="contact-message" name="message" rows="4" placeholder="Tell us what's on your mind..." required minlength="10"></textarea></label>
+            <button class="button button-primary" type="submit">Send your message <span aria-hidden="true">→</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width footer-inner">
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">b.</span><span>bluebird<span class="brand-light">books</span></span></a>
+        <p>A good book is always a good idea.</p>
+        <span>© <span id="current-year"></span> Bluebird Books</span>
+      </div>
+    </footer>
+  </body>
+</html>
